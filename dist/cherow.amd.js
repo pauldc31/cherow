@@ -3401,7 +3401,7 @@ define(['exports'], function (exports) { 'use strict';
                   objState = (objState & ~(16 | 8 | 768)) | 2;
                   if (state.token === 21) {
                       scanSingleToken(state, context);
-                      value = parseAssignmentExpression(state, context | 32768);
+                      value = parseAssignmentExpression(state, context);
                   }
                   else {
                       objState |= 1;
