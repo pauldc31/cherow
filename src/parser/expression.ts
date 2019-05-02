@@ -2139,7 +2139,7 @@ function parseObjectLiteral(
         objState = (objState & ~(Modifiers.Async | Modifiers.Generator | Modifiers.GetSet)) | Modifiers.Computed;
         if (state.token === <Token>Token.Colon) {
           scanSingleToken(state, context);
-          value = parseAssignmentExpression(state, context | Context.AllowPossibleRegEx);
+          value = parseAssignmentExpression(state, context);
         } else {
           objState |= Modifiers.Method;
           if (state.token !== <Token>Token.LeftParen) report(state, Errors.Expected, '(');
