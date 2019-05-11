@@ -2004,6 +2004,7 @@ function parseObjectLiteral(
       properties.push(parseSpreadElement(state, context, Origin.ObjectExpression));
     } else {
       const { startIndex: objStart, startLine: objLine, startColumn: objColumn } = state;
+      objState = Modifiers.None;
       if (
         state.token & Token.IsIdentifier ||
         state.token === Token.EscapedKeyword ||
