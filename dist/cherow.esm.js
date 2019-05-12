@@ -3251,6 +3251,7 @@ function parseObjectLiteral(state, context, scope, type) {
         }
         else {
             const { startIndex: objStart, startLine: objLine, startColumn: objColumn } = state;
+            objState = 0;
             if (state.token & 274432 ||
                 state.token === 121 ||
                 state.token === 126) {
