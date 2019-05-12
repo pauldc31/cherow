@@ -738,6 +738,70 @@ describe('Expressions - Object', () => {
       }
     ],
     [
+      'const a = { foo () { }, "@": 1, }',
+      Context.Empty,
+      {
+          "body": [
+            {
+              "declarations": [
+                {
+                  "id": {
+                    "name": "a",
+                   "type": "Identifier"
+                  },
+                  "init": {
+                    "properties": [
+                      {
+                        "computed": false,
+                        "key": {
+                          "name": "foo",
+                          "type": "Identifier"
+                        },
+                        "kind": "init",
+                       "method": true,
+                        "shorthand": false,
+                        "type": "Property",
+                        "value": {
+                          "async": false,
+                          "body": {
+                            "body": [],
+                            "type": "BlockStatement"
+                          },
+                          "generator": false,
+                         "id": null,
+                          "params": [],
+                          "type": "FunctionExpression",
+                        },
+                      },
+                     {
+                        "computed": false,
+                        "key": {
+                          "type": "Literal",
+                          "value": "@",
+                        },
+                        "kind": "init",
+                        "method": false,
+                       "shorthand": false,
+                        "type": "Property",
+                        "value": {
+                          "type": "Literal",
+                          "value": 1
+                        }
+                      }
+                    ],
+                    "type": "ObjectExpression"
+                  },
+                  "type": "VariableDeclarator"
+                }
+              ],
+              "kind": "const",
+              "type": "VariableDeclaration"
+            }
+          ],
+          "sourceType": "script",
+          "type": "Program"
+        }],
+    [
       '({"a":b}=obj);',
       Context.Empty,
       {
